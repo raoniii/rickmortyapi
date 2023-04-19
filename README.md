@@ -1,5 +1,8 @@
 # rickmortydex
 
+![primeira parte](https://user-images.githubusercontent.com/49912559/232970969-9ab76bcc-3ab1-463c-9483-de0630963d7b.jpeg)
+
+
 A new Flutter project.
 
 ## Getting Started
