@@ -1,23 +1,21 @@
 class CharacterListing {
-  late final int id;
-  late final String name;
-  late final String status;
-  late final String species;
-  late final String type;
-  late final String gender;
+  final String id;
+  final String name;
+  final String url;
+
   String get imageUrl =>
-  'https://rickandmortyapi.com/api/character/avatar/$id.jpeg';
+      'https://rickandmortyapi.com/api/character/avatar/$id.jpeg';
 
-
-  CharacterListing({required name, required id});
+  CharacterListing({required this.id, required this.name, required this.url});
 
   factory CharacterListing.fromJson(Map<String, dynamic> json) {
-    final id = json["id"];
     final name = json["name"];
+    final url = json['url'] as String;
+    final String id = url.split('/')[5];
 
-    return CharacterListing(id: id, name: name);
+    return CharacterListing(id: id, name: name, url: url);
+    // return CharacterListing(id: id, name: name);
   }
-
 }
 
 class CharacterPageResponse {
