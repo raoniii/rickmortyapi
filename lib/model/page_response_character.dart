@@ -14,7 +14,6 @@ class CharacterListing {
     final String id = url.split('/')[5];
 
     return CharacterListing(id: id, name: name, url: url);
-    // return CharacterListing(id: id, name: name);
   }
 }
 
@@ -30,7 +29,6 @@ class CharacterPageResponse {
     final characterListings = (json['results'] as List)
         .map((listingJson) => CharacterListing.fromJson(listingJson))
         .toList();
-
     return CharacterPageResponse(
         characterListings: characterListings, canLoadNextPage: canLoadNextPage);
   }
