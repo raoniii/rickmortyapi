@@ -1,6 +1,10 @@
 # rickmortydex
 
-![primeira parte](https://user-images.githubusercontent.com/49912559/232970969-9ab76bcc-3ab1-463c-9483-de0630963d7b.jpeg)
+
+
+https://user-images.githubusercontent.com/49912559/234067505-192d5a98-0dbe-4dc1-944f-dae814d40a8e.mp4
+
+
 
 
 Projeto flutter consumindo API & Bloc
