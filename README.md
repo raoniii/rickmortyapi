@@ -3,17 +3,25 @@
 ![primeira parte](https://user-images.githubusercontent.com/49912559/232970969-9ab76bcc-3ab1-463c-9483-de0630963d7b.jpeg)
 
 
-A new Flutter project.
+Projeto flutter consumindo API & Bloc
 
-## Getting Started
+https://rickandmortyapi.com/
 
-This project is a starting point for a Flutter application.
+
+## Rick & Morty Dex
+
+O aplicativo comsome uma API de dados de personagens da série Rick & Morty e exibe em uma GRIDVIEW na tela.
+
+O BLoc é utilizado para gerenciar o estado do aplicativo garantido que as mudanças de estado sejam atualizadas 
+
+corretamente na interface do usuário e que a lógica do aplicativo esteja separada da interface do usuário. 
+
+O projeto mostra como utilizar a Flutter API e o padrão BLoC para criar aplicativos em Flutter de forma organizada e escalável.  
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Para saber mais de BLoC](https://pub.dev/packages/flutter_bloc)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para mais informações dúvida ou sugestões pode me procurar.
+
+raonisferreira@gmail.com

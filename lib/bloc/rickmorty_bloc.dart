@@ -10,6 +10,25 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
 
   final _characterRepository = CharacterRepository();
 
+  void loadNextPage() async {
+    final currentState = state;
+    if (currentState is CharacterPageLoadSuccess) {
+      final nextPageIndex = currentState.currentPage + 1;
+      try {
+        final nextPage = await _characterRepository.getCharacterPage(nextPageIndex);
+        final newListings = [...currentState.characterListings, ...nextPage.characterListings];
+        final canLoadNextPage = nextPage.canLoadNextPage;
+        emit(CharacterPageLoadSuccess(
+          characterListings: newListings,
+          canLoadNextPage: canLoadNextPage,
+          currentPage: nextPageIndex,
+        ));
+      } catch (e) {
+        emit(CharacterPageLoadFailed(error: e.toString()));
+      }
+    }
+  }
+
   void _oncharacterRepository(
       CharacterPageRequest event, Emitter<CharacterState> emit) async {
     emit(CharacterLoadProgress());
@@ -18,10 +37,11 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       await _characterRepository.getCharacterPage(event.page);
       emit(CharacterPageLoadSuccess(
           characterListings: characterPageResponse.characterListings,
-          canLoadNextPage: characterPageResponse.canLoadNextPage));
+          canLoadNextPage: characterPageResponse.canLoadNextPage, currentPage: 1));
     } catch (e) {
       emit(CharacterPageLoadFailed(error: e.toString()));
     }
   }
+
 
 }

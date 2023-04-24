@@ -17,19 +17,22 @@ class CharacterListing {
   }
 }
 
-class CharacterPageResponse {
+class CharacterPage {
   final List<CharacterListing> characterListings;
   final bool canLoadNextPage;
 
-  CharacterPageResponse(
-      {required this.characterListings, required this.canLoadNextPage});
+  CharacterPage({
+    this.characterListings = const [],
+    this.canLoadNextPage = false,
+  });
 
-  factory CharacterPageResponse.fromJson(Map<String, dynamic> json) {
+  factory CharacterPage.fromJson(Map<String, dynamic> json) {
     final canLoadNextPage = json['next'] != null;
-    final characterListings = (json['results'] as List)
+    final characterListings = (json['results'] as List<dynamic>)
         .map((listingJson) => CharacterListing.fromJson(listingJson))
         .toList();
-    return CharacterPageResponse(
+
+    return CharacterPage(
         characterListings: characterListings, canLoadNextPage: canLoadNextPage);
   }
 }

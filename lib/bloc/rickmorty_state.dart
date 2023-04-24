@@ -7,11 +7,15 @@ class CharacterInitial extends CharacterState {}
 class CharacterLoadProgress extends CharacterState {}
 
 class CharacterPageLoadSuccess extends CharacterState {
-  late final List<CharacterListing> characterListings;
-  late final bool canLoadNextPage;
+  final List<CharacterListing> characterListings;
+  final bool canLoadNextPage;
+  final int currentPage;
 
-  CharacterPageLoadSuccess(
-      {required this.characterListings, required this.canLoadNextPage});
+  CharacterPageLoadSuccess({
+    required this.characterListings,
+    required this.canLoadNextPage,
+    required this.currentPage,
+  });
 }
 
 class CharacterPageLoadFailed extends CharacterState {

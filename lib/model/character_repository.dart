@@ -7,17 +7,11 @@ class CharacterRepository {
   final baseurl = 'rickandmortyapi.com';
   final client = http.Client();
 
-  Future<CharacterPageResponse> getCharacterPage(int pageIndex) async {
-    // ?page=1
-    final queryParameters = {
-
-      'page': (pageIndex * 20).toString()
-    };
-
-    final uri = Uri.https(baseurl, "/api/character", queryParameters );
-    final response = await client.get(uri as Uri);
+  Future<CharacterPage> getCharacterPage(int pageIndex) async {
+    final queryParameters = {"page": pageIndex.toString()};
+    final uri = Uri.https(baseurl, "/api/character/", queryParameters);
+    final response = await client.get(uri);
     final json = jsonDecode(response.body);
-
-    return CharacterPageResponse.fromJson(json);
+    return CharacterPage.fromJson(json);
   }
 }
