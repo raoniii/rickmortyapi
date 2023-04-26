@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:rickmortydex/model/character_info_response.dart';
 import 'package:rickmortydex/model/page_response_character.dart';
 
 class CharacterRepository {
@@ -13,5 +14,15 @@ class CharacterRepository {
     final response = await client.get(uri);
     final json = jsonDecode(response.body);
     return CharacterPage.fromJson(json);
+  }
+
+  Future<CharacterInfoResponse> getCharacterInfor(int characterId) async {
+
+    final uri = Uri.https(baseurl, "/api/character/$characterId");
+
+      final response = await client.get(uri);
+      final json = jsonDecode(response.body);
+      return CharacterInfoResponse.fromJson(json);
+
   }
 }
