@@ -1,10 +1,16 @@
-# rickmortydex
+## Rick & Morty Dex
+
+O aplicativo comsome uma API de dados de personagens da série Rick & Morty e exibe em uma lista utilizando o Bloc Pattern Design para gerenciar estado.
+
+https://github.com/raoniii/rickmortyapi/assets/49912559/7598ef81-7fae-4b20-b8dc-276951f1a4ce
 
 
+Inspirado nos seguintes videos:
 
-https://user-images.githubusercontent.com/49912559/234067505-192d5a98-0dbe-4dc1-944f-dae814d40a8e.mp4
-
-
+Pt1
+https://youtu.be/Y_zQDzHBkDg
+Pt2
+https://youtu.be/BJ_xB1-DsrE
 
 
 Projeto flutter consumindo API & Bloc
@@ -12,9 +18,6 @@ Projeto flutter consumindo API & Bloc
 https://rickandmortyapi.com/
 
 
-## Rick & Morty Dex
-
-O aplicativo comsome uma API de dados de personagens da série Rick & Morty e exibe em uma GRIDVIEW na tela.
 
 O BLoc é utilizado para gerenciar o estado do aplicativo garantido que as mudanças de estado sejam atualizadas 
 
